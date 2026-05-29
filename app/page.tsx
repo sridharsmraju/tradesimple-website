@@ -52,9 +52,15 @@ borderRadius: "50%",
         About Us
       </a>
 
-      <a href="#" style={{ color: "white", textDecoration: "none" }}>
-        Contact
-      </a>
+      <a
+  href="/contact"
+  style={{
+    color: "white",
+    textDecoration: "none",
+  }}
+>
+  Contact
+</a>
     </div>
   </nav>
 
@@ -151,7 +157,23 @@ borderRadius: "50%",
             cursor: "pointer",
           }}
         >
-          Buy Now
+          <a
+  href="/payment"
+  style={{
+    display: "block",
+    textAlign: "center",
+    width: "100%",
+    padding: "15px",
+    background: "#00ff88",
+    color: "#000",
+    textDecoration: "none",
+    borderRadius: "10px",
+    marginTop: "20px",
+    fontWeight: "bold",
+  }}
+>
+  Enroll Now
+</a>
         </button>
       </div>
 
@@ -187,7 +209,23 @@ borderRadius: "50%",
             cursor: "pointer",
           }}
         >
-          Buy Now
+          <a
+  href="/payment"
+  style={{
+    display: "block",
+    textAlign: "center",
+    width: "100%",
+    padding: "15px",
+    background: "#00ff88",
+    color: "#000",
+    textDecoration: "none",
+    borderRadius: "10px",
+    marginTop: "20px",
+    fontWeight: "bold",
+  }}
+>
+  Enroll Now
+</a>
         </button>
       </div>
     </div>
