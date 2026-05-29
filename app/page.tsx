@@ -205,7 +205,7 @@ borderRadius: "50%",
     © 2026 TradeSimple with Sridhar
   </footer>
 </main>
-```
+
 
 );
 }
