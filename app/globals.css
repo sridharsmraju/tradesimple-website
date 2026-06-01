@@ -1,26 +1,210 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-color: #080808;
+  color: #f5f5f5;
+}
+
+#root { width: 100%; max-width: 100%; text-align: left; }
+
+/* ── Diamond SVG tile patterns ── */
+.bg-diamonds {
+  background-color: #111111;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 4L56 30L30 56L4 30Z' fill='none' stroke='%23F59E0B' stroke-opacity='0.12' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 60px 60px;
+}
+
+.bg-diamonds-dark {
+  background-color: #080808;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 4L56 30L30 56L4 30Z' fill='none' stroke='%23F59E0B' stroke-opacity='0.07' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 60px 60px;
+}
+
+.bg-diamonds-dense {
+  background-color: #1a1a1a;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 3L37 20L20 37L3 20Z' fill='none' stroke='%23F59E0B' stroke-opacity='0.1' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 40px 40px;
+}
+
+/* ── Gold shimmer text ── */
+.text-shimmer {
+  background: linear-gradient(90deg, #F59E0B 0%, #FDE68A 40%, #F59E0B 60%, #D97706 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px) rotate(45deg); }
+  50%       { transform: translateY(-18px) rotate(45deg); }
+}
+
+/* ── Buttons ── */
+.btn-gold {
+  background: linear-gradient(135deg, #F59E0B, #D97706);
+  color: #000;
+  font-weight: 700;
+  padding: 0.8rem 2rem;
+  border-radius: 0.5rem;
+  display: inline-block;
+  transition: all 0.25s ease;
+  box-shadow: 0 0 20px rgba(245,158,11,0.35);
+  letter-spacing: 0.03em;
+  text-decoration: none;
+}
+.btn-gold:hover {
+  background: linear-gradient(135deg, #FBBF24, #F59E0B);
+  box-shadow: 0 0 40px rgba(245,158,11,0.6);
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  border: 1.5px solid #F59E0B;
+  color: #F59E0B;
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  border-radius: 0.5rem;
+  display: inline-block;
+  transition: all 0.25s ease;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+}
+.btn-ghost:hover {
+  background: rgba(245,158,11,0.12);
+  box-shadow: 0 0 25px rgba(245,158,11,0.25);
+  transform: translateY(-2px);
+}
+
+/* ── Gold-border card ── */
+.gold-card {
+  background: #1a1a1a;
+  border: 1px solid #2d2d2d;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.gold-card:hover {
+  border-color: rgba(245,158,11,0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(245,158,11,0.08);
+}
+
+/* ── Diamond icon container ── */
+.icon-diamond {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #F59E0B22, #F59E0B11);
+  border: 1px solid #F59E0B55;
+  transform: rotate(45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+.icon-diamond span { transform: rotate(-45deg); display: block; }
+.gold-card:hover .icon-diamond {
+  background: linear-gradient(135deg, #F59E0B44, #F59E0B22);
+  box-shadow: 0 0 20px rgba(245,158,11,0.3);
+}
+
+/* ── Section label pill ── */
+.label-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(245,158,11,0.1);
+  border: 1px solid rgba(245,158,11,0.3);
+  color: #F59E0B;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.35rem 1rem;
+  border-radius: 9999px;
+}
+
+.bg-diamond-neon::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(245,158,11,0.06) 0px,
+      rgba(245,158,11,0.06) 1px,
+      transparent 1px,
+      transparent 60px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(245,158,11,0.06) 0px,
+      rgba(245,158,11,0.06) 1px,
+      transparent 1px,
+      transparent 60px
+    );
+
+  filter: drop-shadow(0 0 4px rgba(245,158,11,0.25));
+
+  pointer-events: none;
+}
+
+.bg-diamonds-dark {
+  background-color: #080808;
+
+  background-image:
+    linear-gradient(
+      45deg,
+      rgba(245,158,11,0.12) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      -45deg,
+      rgba(245,158,11,0.12) 1px,
+      transparent 1px
+    );
+
+  background-size: 80px 80px;
+}
+
+.disclaimer-diamond {
+  background-color: #0B0B0B;
+
+  background-image:
+    radial-gradient(
+      circle at top right,
+      rgba(245,158,11,0.025),
+      transparent 40%
+    ),
+    linear-gradient(
+      45deg,
+      rgba(245,158,11,0.03) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgba(245,158,11,0.03) 75%
+    ),
+    linear-gradient(
+      -45deg,
+      rgba(245,158,11,0.03) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgba(245,158,11,0.03) 75%
+    );
+
+  background-size: auto, 80px 80px, 80px 80px;
 }
