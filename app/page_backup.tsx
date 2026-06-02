@@ -36,7 +36,7 @@ export default function Home() {
     >
       {/* NAVBAR */}
 
-      <nav
+      <nav className="navbar stack-mobile"
          style={{
     position: "fixed",
     top: 0,
@@ -147,7 +147,7 @@ export default function Home() {
 
           {/* MENU */}
 
-          <div
+          <div  className="nav-links"
             style={{
               display: "flex",
               gap: "28px",
@@ -186,6 +186,7 @@ export default function Home() {
           </div>
 
           <a
+            className="enroll-btn"
             href="/payment"
             style={{
               background:
@@ -251,6 +252,7 @@ export default function Home() {
   }}
 /> */}
       <section
+      className="hero-section"
         style={{
           maxWidth: "1400px",
           margin: "0 auto",
@@ -347,7 +349,7 @@ export default function Home() {
                 marginTop: "35px",
               }}
             >
-              <a
+              <a className="enroll-btn"
                 href="/payment"
                 style={{
                   background:
@@ -362,7 +364,7 @@ export default function Home() {
                 Start Learning →
               </a>
 
-              <a
+              <a className="enroll-btn"
                 href="#course"
                 style={{
                   border: "1px solid rgba(245,158,11,0.4)",
@@ -375,10 +377,10 @@ export default function Home() {
                 Explore Courses
               </a>
 
-               <a
+               <a className="enroll-btn btn-ghost text-base"
     href="/downloads/free-1-day-notes.pdf"
     download
-    className="btn-ghost text-base"
+    
     style={{
       borderColor: "#10B981",
       color: "#10B981",
@@ -518,7 +520,7 @@ export default function Home() {
                 "0 0 40px rgba(245,158,11,0.06)",
             }}
           >
-            <div
+            <div  className="badge-mobile"
               style={{
                 position: "absolute",
                 top: "-15px",
@@ -536,7 +538,7 @@ export default function Home() {
               ◆ NEXT BATCH STARTING SOON
             </div>
 
-            <div
+            <div className="profile-section"
               style={{
                 display: "flex",
                 gap: "16px",
@@ -544,7 +546,7 @@ export default function Home() {
                 marginTop: "20px",
               }}
             >
-              <div
+              <div className="diamond-icon"
                 style={{
                   width: "64px",
                   height: "64px",
@@ -569,8 +571,8 @@ export default function Home() {
                 </span>
               </div>
 
-              <div>
-                <div
+              <div className="profile-text" >
+                <div 
                   style={{
                     fontWeight: 800,
                     fontSize: "1.4rem",
@@ -590,7 +592,7 @@ export default function Home() {
                 
               </div>
                 {/* RIGHT: PROFILE IMAGE BLOCK (NEW) */}
-  <div
+  <div className="profile-image"
     style={{
       marginLeft: "20px",
       width: "100px",
@@ -615,7 +617,7 @@ export default function Home() {
     </div>
             </div>
 
-            <blockquote
+            <blockquote className="mentor-quote"
               style={{
                 marginTop: "30px",
                 borderLeft: "3px solid #F59E0B",
@@ -629,7 +631,7 @@ export default function Home() {
               markets and help traders become consistent.
             </blockquote>
 
-            <ul
+            <ul  className="course-list"
               style={{
                 marginTop: "25px",
                 lineHeight: "2.2",
@@ -1052,7 +1054,7 @@ export default function Home() {
     Stock Market & Technical Analysis
   </h3>
 
-  <ul
+  <ul className="course-list1"
     style={{
       textAlign: "left",
       color: "#D1D5DB",
@@ -1080,7 +1082,7 @@ export default function Home() {
     Intraday Trading<br/> Mastery
   </h3>
 
-  <ul
+  <ul className="course-list1"
     style={{
       textAlign: "left",
       color: "#D1D5DB",
@@ -1108,7 +1110,7 @@ export default function Home() {
     Futures & <br/>Options Trading
   </h3>
 
-  <ul
+  <ul className="course-list1"
     style={{
       textAlign: "left",
       color: "#D1D5DB",

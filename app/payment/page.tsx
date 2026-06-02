@@ -29,7 +29,7 @@ margin: "0 auto",
         marginBottom: "50px",
       }}
     >
-      <h1
+      <h1 className="page-title"
         style={{
           fontSize: "3rem",
           fontWeight: 800,
@@ -51,7 +51,7 @@ margin: "0 auto",
 
     {/* Course Details */}
 
-    <div
+    <div className="course-details-card"
       style={{
         background: "#111111",
         border: "1px solid rgba(245,158,11,0.2)",
@@ -60,7 +60,7 @@ margin: "0 auto",
         marginBottom: "35px",
       }}
     >
-      <h2
+      <h2 className="center_test"
         style={{
           color: "#F59E0B",
           marginBottom: "25px",
@@ -70,7 +70,7 @@ margin: "0 auto",
         Course Details
       </h2>
 
-      <div
+      <div className="course-details-content"
         style={{
           lineHeight: "2",
           color: "#D1D5DB",
@@ -108,7 +108,7 @@ margin: "0 auto",
       
     </div>
 {/* --Three box section */}
-    <div
+    <div className="course-grid"
       style={{
           display: "grid",
     gridTemplateColumns: "repeat(3, 1fr)",
@@ -118,12 +118,12 @@ margin: "0 auto",
       }}
     >
 
-      <div className="gold-card">
+      <div className="gold-card center_test">
   <h3 style={{ color: "#F59E0B", fontSize: "1.5rem" }}>
     Stock Market & Technical Analysis
   </h3>
 
-  <ul
+  <ul className="course-list1"
     style={{
       textAlign: "left",
       color: "#D1D5DB",
@@ -142,12 +142,12 @@ margin: "0 auto",
 
 </div>
 
-<div className="gold-card">
+<div className="gold-card center_test">
   <h3 style={{ color: "#F59E0B", fontSize: "1.5rem" }}>
     Intraday Trading<br/> Mastery
   </h3>
 
-  <ul
+  <ul className="course-list1"
     style={{
       textAlign: "left",
       color: "#D1D5DB",
@@ -166,12 +166,12 @@ margin: "0 auto",
 
 </div>
 
-<div className="gold-card">
+<div className="gold-card center_test">
   <h3 style={{ color: "#F59E0B", fontSize: "1.5rem" }}>
     Futures & <br/>Options Trading
   </h3>
 
-  <ul
+  <ul className="course-list1"
     style={{
       textAlign: "left",
       color: "#D1D5DB",
@@ -207,7 +207,7 @@ margin: "0 auto",
         marginBottom: "30px",
       }}
     >
-      <h2
+      <h2 className="center_test"
         style={{
           color: "#F87171",
           marginBottom: "20px",
