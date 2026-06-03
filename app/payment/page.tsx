@@ -11,9 +11,100 @@ style={{
 minHeight: "100vh",
 background: "#080808",
 color: "white",
-padding: "80px 20px 80px",
+padding: "50px 20px 80px",
 }}
 >
+
+
+
+          {/* LOGO */}
+
+          <a  className="logo-wrapper"
+  href="#"
+  style={{
+    display: "flex",
+    alignItems: "center",
+    gap: "16px",
+    textDecoration: "none",
+    cursor: "pointer",
+  }}
+>
+            <div 
+              style={{
+                width: "58px",
+                height: "58px",
+                background:
+                  "linear-gradient(135deg,#F59E0B,#D97706)",
+                transform: "rotate(45deg)",
+                borderRadius: "10px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                boxShadow:
+                  "0 0 12px rgba(245,158,11,0.25)",
+              }}
+            >
+              {/* <span
+                style={{
+                  transform: "rotate(-45deg)",
+                  color: "#000",
+                  fontWeight: 900,
+                  fontSize: "22px",
+                }}
+              >
+                TS
+              </span> */}
+
+              <img
+  src="/images/logo_white_black.png"
+  alt="TradeSimple Logo"
+  style={{
+    width: "45px",
+    height: "45px",
+    transform: "rotate(-45deg)",
+    objectFit: "contain",
+    
+  }}
+/>
+            </div>
+
+            <div>
+              <div
+                style={{
+    fontSize: "1.7rem",
+    fontWeight: 800,
+    color: "#FFFFFF",
+  }}
+              >
+                Trade
+                <span
+                  style={{
+                    color: "#F59E0B",
+                  }}
+                >
+                  <span className="text-shimmer">
+    Simple
+  </span>
+                </span>
+              </div>
+
+              <div
+                style={{
+                  color: "#F59E0B",
+                  fontSize: "0.8rem",
+                  letterSpacing: "2px",
+                  fontWeight: 600,
+                }}
+              >WITH&nbsp;
+                <span className="text-shimmer">
+     SRIDHAR
+  </span>
+                
+              </div>
+            </div>
+          </a>
+
+
 <div
 style={{
 maxWidth: "900px",

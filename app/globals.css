@@ -387,4 +387,11 @@ body {
   .section-bottom {
     padding: 160px 16px 40px 16px !important;
   }
+
+  .logo-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

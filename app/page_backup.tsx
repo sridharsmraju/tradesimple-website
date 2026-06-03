@@ -251,8 +251,8 @@ export default function Home() {
     boxShadow: "0 0 15px rgba(245,158,11,0.15)",
   }}
 /> */}
-      <section
-      className="hero-section"
+      <section   
+      className="hero-section section-bottom "
         style={{
           maxWidth: "1400px",
           margin: "0 auto",
@@ -449,7 +449,7 @@ export default function Home() {
 
             {/* STATS */}
 
-            <div
+           {/*  <div
               style={{
                 display: "flex",
                 gap: "50px",
@@ -503,7 +503,7 @@ export default function Home() {
                   Success Rate
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* RIGHT CARD */}
@@ -668,7 +668,7 @@ export default function Home() {
 
 {/* WHY CHOOSE US SECTION */}
 
-<section
+<section className="section-spacing"
   style={{
     background: "#111111",
     padding: "100px 20px",
@@ -837,7 +837,8 @@ export default function Home() {
 </section>
 
 
-<section id="course"
+<section  className="section-spacing"
+id="course"
   style={{
     background: "#080808",
     padding: "100px 20px",
@@ -1122,7 +1123,7 @@ export default function Home() {
     <li>✓ Option Greeks</li>
     <li>✓ Option Buying</li>
     <li>✓ Option Selling</li>
-    <li>✓ Hedging Strategies</li>
+    <li>✓ Trapping Strategies</li>
     <li>✓ Expiry Trading</li>
   </ul>
 
@@ -1138,7 +1139,9 @@ export default function Home() {
 
 {/* GET IN TOUCH */}
 
-<section id="contact"
+<section  className="section-spacing"
+
+id="contact"
   style={{
     /* background: "#080808", */
     background: "transparent",
@@ -1325,7 +1328,8 @@ export default function Home() {
   </div>
 </section>
 
-<section className="disclaimer-diamond"
+<section className="disclaimer-diamond section-spacing"
+
   style={{
   
     padding: "80px 20px",

@@ -97,7 +97,7 @@ export default function Home() {
                   "0 0 12px rgba(245,158,11,0.25)",
               }}
             >
-              <span
+              {/* <span
                 style={{
                   transform: "rotate(-45deg)",
                   color: "#000",
@@ -106,7 +106,19 @@ export default function Home() {
                 }}
               >
                 TS
-              </span>
+              </span> */}
+
+              <img
+   src="/images/logo_white_black.png"
+  alt="TradeSimple Logo"
+  style={{
+    width: "45px",
+    height: "45px",
+    transform: "rotate(-45deg)",
+    objectFit: "contain",
+    
+  }}
+/>
             </div>
 
             <div>
@@ -361,7 +373,7 @@ export default function Home() {
                   fontWeight: 800,
                 }}
               >
-                Start Learning →
+                Start Learning for Free →
               </a>
 
               <a className="enroll-btn"
@@ -449,7 +461,7 @@ export default function Home() {
 
             {/* STATS */}
 
-            <div
+           {/*  <div
               style={{
                 display: "flex",
                 gap: "50px",
@@ -503,7 +515,7 @@ export default function Home() {
                   Success Rate
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* RIGHT CARD */}
@@ -559,7 +571,7 @@ export default function Home() {
                   justifyContent: "center",
                 }}
               >
-                <span
+                 <span
                   style={{
                     transform: "rotate(-45deg)",
                     color: "#000",
@@ -568,7 +580,19 @@ export default function Home() {
                   }}
                 >
                   TS
-                </span>
+                </span> 
+{/*                 <img
+  src="/images/logo_white_black.png"
+  alt="TradeSimple Logo"
+  style={{
+    width: "45px",
+    height: "45px",
+    transform: "rotate(-45deg)",
+    objectFit: "contain",
+  
+    
+  }}
+  /> */}
               </div>
 
               <div className="profile-text" >
@@ -1123,7 +1147,7 @@ id="course"
     <li>✓ Option Greeks</li>
     <li>✓ Option Buying</li>
     <li>✓ Option Selling</li>
-    <li>✓ Hedging Strategies</li>
+    <li>✓ Trapping Strategies</li>
     <li>✓ Expiry Trading</li>
   </ul>
 
