@@ -362,7 +362,9 @@ export default function Home() {
               }}
             >
               <a className="enroll-btn"
-                href="/payment"
+                href="https://www.youtube.com/@TradeSimpleWithSridhar"
+                target="_blank"
+  rel="noopener noreferrer"
                 style={{
                   background:
                     "linear-gradient(135deg,#F59E0B,#D97706)",
@@ -438,7 +440,7 @@ export default function Home() {
       marginBottom: "10px",
     }}
   >
-    90 Days of Personal Trading Notes
+    30 Days of Personal Trading Notes <span className="text-shimmer">(COMING SOON) </span>
   </div>
 
   <p
@@ -454,7 +456,7 @@ export default function Home() {
     taking trades in live markets.
   </p>
 
-  <button className="btn-gold">
+  <button  disabled className="btn-gold">
     Buy Now →
   </button>
 </div>
@@ -1046,7 +1048,8 @@ id="course"
   }}
 >
   <a
-    href="/payment"
+    href="/Brocure/Master-the-Scalp-Course-Details.png"
+    download
     className="btn-ghost"
   >
     Download Brochure
@@ -1230,7 +1233,7 @@ id="contact"
         </div>
 
         <div style={{ marginTop: "10px", color: "#D1D5DB" }}>
-          +91 99XXXXXXXX
+          +91 9380891232
         </div>
       </div>
 
@@ -1240,7 +1243,7 @@ id="contact"
         </div>
 
         <div style={{ marginTop: "10px", color: "#D1D5DB" }}>
-          support@tradesimplewithsridhar.com
+          tradesimplewithsridhar@gmail.com
         </div>
       </div>
     </div>
@@ -1266,7 +1269,7 @@ id="contact"
   }}
 >
   <a
-    href="https://youtube.com"
+    href="https://www.youtube.com/@TradeSimpleWithSridhar"
     target="_blank"
     rel="noopener noreferrer"
     style={{
