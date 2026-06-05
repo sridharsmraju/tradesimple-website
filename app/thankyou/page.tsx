@@ -93,9 +93,9 @@ export default function ThankYouPage() {
         >
           <h3>Need Help?</h3>
 
-          <p>📞 +91 99XXXXXXXX</p>
+          <p>📞 +91 9380891232</p>
 
-          <p>📧 dummy@gmail.com</p>
+          <p>📧 tradesimplewithsridhar@gmail.com</p>
         </div>
 
         <div
@@ -120,7 +120,7 @@ export default function ThankYouPage() {
             Back to Home
           </a>
 
-          <a
+          {/* <a
             href="/contact"
             style={{
               padding: "14px 25px",
@@ -132,7 +132,7 @@ export default function ThankYouPage() {
             }}
           >
             Contact Support
-          </a>
+          </a> */}
         </div>
       </div>
     </main>

@@ -4,6 +4,161 @@ import { useState } from "react";
 
 export default function PaymentPage() {
 const [accepted, setAccepted] = useState(false);
+  
+
+/* const startPayment = async () => {
+  console.log("Payment button clicked");
+
+  try {
+    const orderResponse = await fetch("/api/create-order", {
+      method: "POST",
+    });
+
+    console.log("Order response received");
+
+    const order = await orderResponse.json();
+
+    console.log("Order data:", order);
+
+    const options = {
+      key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
+      amount: order.amount,
+      currency: order.currency,
+      order_id: order.order_id,
+      name: "Trade Simple with Sridhar",
+      description: "Master The Scalp",
+    };
+
+    console.log("Creating Razorpay instance");
+
+    const razorpay = new (window as any).Razorpay(options);
+
+    console.log("Opening Razorpay popup");
+
+    razorpay.open();
+  } catch (error) {
+    console.error("Payment Error:", error);
+  }
+
+
+
+   
+  }; */
+
+
+  const startPayment = async () => {
+  console.log("Payment button clicked");
+
+  try {
+    const orderResponse = await fetch("/api/create-order", {
+      method: "POST",
+    });
+
+    console.log("Order response received");
+
+    const order = await orderResponse.json();
+
+    console.log("Order data:", order);
+
+    const options = {
+      key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
+
+      amount: order.amount,
+
+      currency: order.currency,
+
+      order_id: order.order_id,
+
+      name: "Trade Simple with Sridhar",
+
+      description: "Master The Scalp",
+
+      handler: async function (response: any) {
+        console.log(
+          "Razorpay success response:",
+          response
+        );
+
+        const verifyResponse = await fetch(
+          "/api/verify-payment",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(response),
+          }
+        );
+
+        const verify =
+          await verifyResponse.json();
+
+        console.log(
+          "Verify response:",
+          verify
+        );
+
+        if (verify.success) {
+          window.location.href = "/thankyou";
+
+          // Optional redirect
+          // window.location.href = "/thank-you";
+        } else {
+          alert(
+            "Payment Verification Failed"
+          );
+        }
+      },
+
+      modal: {
+        ondismiss: function () {
+          console.log(
+            "Payment popup closed by user"
+          );
+        },
+      },
+
+      theme: {
+        color: "#F59E0B",
+      },
+    };
+
+    console.log("Creating Razorpay instance");
+
+    const razorpay =
+      new (window as any).Razorpay(
+        options
+      );
+
+    razorpay.on(
+      "payment.failed",
+      function (response: any) {
+        console.log(
+          "Payment failed:",
+          response
+        );
+
+        alert(
+          response.error.description ||
+            "Payment Failed"
+        );
+      }
+    );
+
+    console.log("Opening Razorpay popup");
+
+    razorpay.open();
+  } catch (error) {
+    console.error(
+      "Payment Error:",
+      error
+    );
+
+    alert(
+      "Unable to initiate payment"
+    );
+  }
+};
 
   return (
 <main
@@ -500,7 +655,8 @@ margin: "0 auto",
         </p>
       )}
 
-      <button
+      <button 
+        onClick={startPayment}
         className="btn-gold"
         disabled={!accepted}
         style={{
