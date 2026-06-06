@@ -4,6 +4,7 @@ import { useState } from "react";
 
 export default function PaymentPage() {
 const [accepted, setAccepted] = useState(false);
+const [paymentType, setPaymentType] = useState("full");
   
 
 /* const startPayment = async () => {
@@ -46,12 +47,18 @@ const [accepted, setAccepted] = useState(false);
   }; */
 
 
-  const startPayment = async () => {
+  const startPayment = async (paymentType: string) => {
   console.log("Payment button clicked");
 
   try {
     const orderResponse = await fetch("/api/create-order", {
       method: "POST",
+      headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    paymentType,
+  }),
     });
 
     console.log("Order response received");
@@ -175,7 +182,7 @@ padding: "50px 20px 80px",
           {/* LOGO */}
 
           <a  className="logo-wrapper"
-  href="#"
+  href="/"
   style={{
     display: "flex",
     alignItems: "center",
@@ -350,9 +357,337 @@ margin: "0 auto",
           <li>Intraday Scalping Mastery</li>
           <li>Futures & Options Trading in Indices</li>
         </ul>
+
+        <div style={{ marginBottom: "30px" }}>
+  {/* Old Price */}
+  <div
+    style={{
+      color: "#9CA3AF",
+      fontSize: "2rem",
+      textDecoration: "line-through",
+      marginBottom: "6px",
+      fontWeight: 900,
+    }}
+  >
+    ₹24,999 + GST
+  </div>
+
+  {/* Offer Price */}
+  <div
+    style={{
+      color: "#F59E0B",
+      fontSize: "3rem",
+      fontWeight: 900,
+      lineHeight: 1,
+    }}
+  >
+    <span className="text-shimmer">OFFER &nbsp; ₹22,999 </span>
+  </div>
+
+  <div
+    style={{
+      color: "#10B981",
+      fontSize: "1rem",
+      fontWeight: 700,
+      marginTop: "8px",
+    }}
+  >
+    All Inclusive • Best Value
+  </div>
+</div>
+
+<div
+  style={{
+    textAlign: "left",
+    maxWidth: "500px",
+    margin: "0 auto 25px",
+    padding: "20px",
+    border: "1px solid rgba(245,158,11,0.2)",
+    borderRadius: "12px",
+    background: "rgba(245,158,11,0.05)",
+  }}
+>
+
+<label
+  style={{
+    display: "block",
+    marginBottom: "16px",
+    cursor: "pointer",
+  }}
+>
+  <input
+    type="radio"
+    name="paymentType"
+    value="full"
+    checked={paymentType === "full"}
+    onChange={(e) => setPaymentType(e.target.value)}
+    style={{ marginRight: "10px" }}
+  />
+
+  <span
+    style={{
+      color: "#10B981",
+      fontWeight: 700,
+      fontSize: "1.1rem",
+    }}
+  >
+    Pay in Full
+  </span>
+
+  <div
+    style={{
+      color: "#F59E0B",
+      fontSize: "1.6rem",
+      fontWeight: 800,
+      marginTop: "4px",
+      marginLeft: "25px",
+    }}
+  >
+    ₹22,999 <span className="text-shimmer"style={{fontSize: "1rem",color: "#F59E0B",fontWeight: 100,}}> Save ₹2,000 </span>
+  </div>
+
+  <div
+    style={{
+      color: "#9CA3AF",
+      marginLeft: "25px",
+    }}
+  >
+    • All Inclusive
+  </div>
+</label>
+
+<label
+  style={{
+    display: "block",
+    cursor: "pointer",
+  }}
+>
+  <input
+    type="radio"
+    name="paymentType"
+    value="installment1"
+    checked={paymentType === "installment1"}
+    onChange={(e) => setPaymentType(e.target.value)}
+    style={{ marginRight: "10px" }}
+  />
+
+  <span
+    style={{
+      color: "#10B981",
+      fontWeight: 700,
+      fontSize: "1.1rem",
+    }}
+  >
+    Pay in 2 Easy Installments
+  </span>
+
+  <div
+    style={{
+      color: "#F59E0B",
+      fontSize: "1.3rem",
+      fontWeight: 700,
+      marginTop: "4px",
+      marginLeft: "25px",
+    }}
+  >
+    ₹23,999 Total
+  </div>
+
+  <div
+    style={{
+      color: "#9CA3AF",
+      marginTop: "8px",
+      marginLeft: "25px",
+    }}
+  >
+    ₹12,000 Today
+  </div>
+
+  <div
+    style={{
+      color: "#9CA3AF",
+      marginLeft: "25px",
+    }}
+  >
+    ₹11,999 After 7 Classes
+  </div>
+</label>
+</div>
+{/* <div
+  style={{
+    background: "rgba(245,158,11,0.08)",
+    border: "1px solid rgba(245,158,11,0.25)",
+    borderRadius: "12px",
+    padding: "20px",
+    textAlign: "left",
+    maxWidth: "500px",
+    margin: "0 auto",
+  }}
+>
+  <h3
+    style={{
+      color: "#fff",
+      marginBottom: "15px",
+      fontSize: "1.2rem",
+    }}
+  >
+    Choose Your Payment Plan
+  </h3>
+
+  <div style={{ marginBottom: "16px" }}>
+    <div
+      style={{
+        color: "#10B981",
+        fontWeight: 700,
+        fontSize: "1.1rem",
+      }}
+    >
+      ✓ Pay in Full
+    </div>
+    <div
+      style={{
+        color: "#F59E0B",
+        fontSize: "1.6rem",
+        fontWeight: 800,
+      }}
+    >
+      ₹22,999
+    </div>
+    <div style={{ color: "#9CA3AF" }}>
+      Best Value • All Inclusive
+    </div>
+  </div>
+
+  <div
+    style={{
+      textAlign: "center",
+      color: "#9CA3AF",
+      margin: "12px 0",
+      fontWeight: 600,
+    }}
+  >
+    OR
+  </div>
+
+  <div>
+    <div
+      style={{
+       color: "#10B981",
+        fontWeight: 700,
+        fontSize: "1.1rem",
+      }}
+    >
+     ✓ Pay in 2 Easy Installments
+    </div>
+
+    <div
+      style={{
+        color: "#F59E0B",
+        fontSize: "1.3rem",
+        fontWeight: 700,
+        marginTop: "4px",
+      }}
+    >
+      ₹23,999 Total
+    </div>
+
+    <div style={{ color: "#9CA3AF", marginTop: "8px" }}>
+      ₹12,000 Today
+    </div>
+
+    <div style={{ color: "#9CA3AF" }}>
+      ₹11,999 After 7 Classes
+    </div>
+  </div>
+</div> */}
+
+{/* radio button */}
+
+{/* <div
+  style={{
+    textAlign: "left",
+    maxWidth: "500px",
+    margin: "0 auto 25px",
+    padding: "20px",
+    border: "1px solid rgba(245,158,11,0.2)",
+    borderRadius: "12px",
+    background: "rgba(245,158,11,0.05)",
+  }}
+>
+  <h3 style={{ marginBottom: "15px" }}>
+    Choose Your Payment Plan
+  </h3>
+
+  <label style={{ display: "block", marginBottom: "12px", cursor: "pointer" }}>
+    <input
+      type="radio"
+      name="paymentType"
+      value="full"
+      checked={paymentType === "full"}
+      onChange={(e) => setPaymentType(e.target.value)}
+      style={{ marginRight: "10px" }}
+    />
+    Pay in Full – ₹22,999
+    <span className="text-shimmer" style={{ marginLeft: "10px" }}>
+      Save ₹2,000
+    </span>
+  </label>
+
+  <label style={{ display: "block", marginBottom: "12px", cursor: "pointer" }}>
+    <input
+      type="radio"
+      name="paymentType"
+      value="installment1"
+      checked={paymentType === "installment1"}
+      onChange={(e) => setPaymentType(e.target.value)}
+      style={{ marginRight: "10px" }}
+    />
+    First Installment – ₹12,000
+  </label>
+
+  <label style={{ display: "block", cursor: "pointer" }}>
+    <input
+      type="radio"
+      name="paymentType"
+      value="installment2"
+      checked={paymentType === "installment2"}
+      onChange={(e) => setPaymentType(e.target.value)}
+      style={{ marginRight: "10px" }}
+    />
+    Second Installment – ₹11,999
+  </label>
+</div>
+ */}
+
+
       </div>
       
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 {/* --Three box section */}
     <div className="course-grid"
       style={{
@@ -401,7 +736,7 @@ margin: "0 auto",
       marginTop: "20px",
     }}
   >
-    <li>✓ Scalping Strategies</li>
+    <li>✓ <span className="text-shimmer"style={{color: "#F59E0B",fontWeight: 700,}}>Index Options</span></li>
     <li>✓ Momentum Trading</li>
     <li>✓ Breakout Trading</li>
     <li>✓ Risk Management</li>
@@ -425,12 +760,12 @@ margin: "0 auto",
       marginTop: "20px",
     }}
   >
-    <li>✓ Index Options</li>
+    <li>✓ <span className="text-shimmer"style={{color: "#F59E0B",fontWeight: 700,}}>Scalping Strategies</span></li>
     <li>✓ Option Greeks</li>
     <li>✓ Option Buying</li>
     <li>✓ Option Selling</li>
-    <li>✓ Hedging Strategies</li>
-    <li>✓ Expiry Trading</li>
+    <li>✓ <span className="text-shimmer"style={{color: "#F59E0B",fontWeight: 700,}}>Trapping Strategies</span></li>
+    <li>✓ <span className="text-shimmer"style={{color: "#F59E0B",fontWeight: 700,}}>Story Base Trading</span></li>
   </ul>
 
  {/*  <div style={{ marginTop: "25px" }}>
@@ -440,6 +775,9 @@ margin: "0 auto",
 
 </div>
 </div>
+
+
+
     
 
     {/* Disclaimer */}
@@ -641,10 +979,10 @@ margin: "0 auto",
           marginBottom: "25px",
         }}
       >
-        Razorpay payment gateway will be integrated here.
+        Powered by Razorpay payment gateway.
       </p>
 
-      {!accepted && (
+      {/* {!accepted && (
         <p
           style={{
             color: "#F59E0B",
@@ -653,9 +991,25 @@ margin: "0 auto",
         >
           Please accept the disclaimer to continue.
         </p>
-      )}
+      )} */}
 
-      <button 
+      {!accepted && (
+  <div
+    style={{
+      background: "rgba(245,158,11,0.12)",
+      border: "1px solid rgba(245,158,11,0.35)",
+      color: "#F59E0B",
+      padding: "14px 18px",
+      borderRadius: "10px",
+      marginBottom: "20px",
+      fontWeight: 600,
+    }}
+  >
+    ⚠️ Please read and accept the disclaimer before proceeding with payment.
+  </div>
+)}
+
+      {/* <button 
         onClick={startPayment}
         className="btn-gold"
         disabled={!accepted}
@@ -665,7 +1019,17 @@ margin: "0 auto",
         }}
       >
         Pay Now →
-      </button>
+      </button> */}
+
+      <button
+  onClick={() => startPayment(paymentType)}
+  className="btn-gold"
+  disabled={!accepted}
+>
+  {paymentType === "full"
+    ? "Pay ₹22,999 →"
+    : "Pay ₹12,000 →"}
+</button>
     </div>
   </div>
 </main>

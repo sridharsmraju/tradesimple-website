@@ -97,7 +97,7 @@ export default function Home() {
                   "0 0 12px rgba(245,158,11,0.25)",
               }}
             >
-              <span
+              {/* <span
                 style={{
                   transform: "rotate(-45deg)",
                   color: "#000",
@@ -106,7 +106,19 @@ export default function Home() {
                 }}
               >
                 TS
-              </span>
+              </span> */}
+
+              <img
+   src="/images/logo_white_black.png"
+  alt="TradeSimple Logo"
+  style={{
+    width: "45px",
+    height: "45px",
+    transform: "rotate(-45deg)",
+    objectFit: "contain",
+    
+  }}
+/>
             </div>
 
             <div>
@@ -350,7 +362,9 @@ export default function Home() {
               }}
             >
               <a className="enroll-btn"
-                href="/payment"
+                href="https://www.youtube.com/@TradeSimpleWithSridhar"
+                target="_blank"
+  rel="noopener noreferrer"
                 style={{
                   background:
                     "linear-gradient(135deg,#F59E0B,#D97706)",
@@ -361,7 +375,7 @@ export default function Home() {
                   fontWeight: 800,
                 }}
               >
-                Start Learning →
+                Start Learning for Free →
               </a>
 
               <a className="enroll-btn"
@@ -426,7 +440,7 @@ export default function Home() {
       marginBottom: "10px",
     }}
   >
-    90 Days of Personal Trading Notes
+    30 Days of Personal Trading Notes <span className="text-shimmer">(COMING SOON) </span>
   </div>
 
   <p
@@ -442,7 +456,7 @@ export default function Home() {
     taking trades in live markets.
   </p>
 
-  <button className="btn-gold">
+  <button  disabled className="btn-gold">
     Buy Now →
   </button>
 </div>
@@ -559,7 +573,7 @@ export default function Home() {
                   justifyContent: "center",
                 }}
               >
-                <span
+                 <span
                   style={{
                     transform: "rotate(-45deg)",
                     color: "#000",
@@ -568,7 +582,19 @@ export default function Home() {
                   }}
                 >
                   TS
-                </span>
+                </span> 
+{/*                 <img
+  src="/images/logo_white_black.png"
+  alt="TradeSimple Logo"
+  style={{
+    width: "45px",
+    height: "45px",
+    transform: "rotate(-45deg)",
+    objectFit: "contain",
+  
+    
+  }}
+  /> */}
               </div>
 
               <div className="profile-text" >
@@ -992,7 +1018,7 @@ id="course"
 </div>
 </div>
 
-  <div
+{/*   <div
     style={{
       color: "#F59E0B",
       fontSize: "3rem",
@@ -1010,7 +1036,133 @@ id="course"
     }}
   >
     + GST Applicable
-  </p>
+  </p> */}
+
+  <div style={{ marginBottom: "30px" }}>
+  {/* Old Price */}
+  <div
+    style={{
+      color: "#9CA3AF",
+      fontSize: "2rem",
+      textDecoration: "line-through",
+      marginBottom: "6px",
+      fontWeight: 900,
+    }}
+  >
+    ₹24,999 + GST
+  </div>
+
+  {/* Offer Price */}
+  <div
+    style={{
+      color: "#F59E0B",
+      fontSize: "3rem",
+      fontWeight: 900,
+      lineHeight: 1,
+    }}
+  >
+    <span className="text-shimmer">OFFER &nbsp; ₹22,999 </span>
+  </div>
+
+  <div
+    style={{
+      color: "#10B981",
+      fontSize: "1rem",
+      fontWeight: 700,
+      marginTop: "8px",
+    }}
+  >
+    All Inclusive • Best Value
+  </div>
+</div>
+
+<div
+  style={{
+    background: "rgba(245,158,11,0.08)",
+    border: "1px solid rgba(245,158,11,0.25)",
+    borderRadius: "12px",
+    padding: "20px",
+    textAlign: "left",
+    maxWidth: "500px",
+    margin: "0 auto",
+  }}
+>
+  <h3
+    style={{
+      color: "#fff",
+      marginBottom: "15px",
+      fontSize: "1.2rem",
+    }}
+  >
+    Choose Your Payment Plan
+  </h3>
+
+  <div style={{ marginBottom: "16px" }}>
+    <div
+      style={{
+        color: "#10B981",
+        fontWeight: 700,
+        fontSize: "1.1rem",
+      }}
+    >
+      ✓ Pay in Full
+    </div>
+    <div
+      style={{
+        color: "#F59E0B",
+        fontSize: "1.6rem",
+        fontWeight: 800,
+      }}
+    >
+      ₹22,999
+    </div>
+    <div style={{ color: "#9CA3AF" }}>
+      Best Value • All Inclusive
+    </div>
+  </div>
+
+  <div
+    style={{
+      textAlign: "center",
+      color: "#9CA3AF",
+      margin: "12px 0",
+      fontWeight: 600,
+    }}
+  >
+    OR
+  </div>
+
+  <div>
+    <div
+      style={{
+       color: "#10B981",
+        fontWeight: 700,
+        fontSize: "1.1rem",
+      }}
+    >
+     ✓ Pay in 2 Easy Installments
+    </div>
+
+    <div
+      style={{
+        color: "#F59E0B",
+        fontSize: "1.3rem",
+        fontWeight: 700,
+        marginTop: "4px",
+      }}
+    >
+      ₹23,999 Total
+    </div>
+
+    <div style={{ color: "#9CA3AF", marginTop: "8px" }}>
+      ₹12,000 Today
+    </div>
+
+    <div style={{ color: "#9CA3AF" }}>
+      ₹11,999 After 7 Classes
+    </div>
+  </div>
+</div>
 
   <div
   style={{
@@ -1022,7 +1174,8 @@ id="course"
   }}
 >
   <a
-    href="/payment"
+    href="/Brocure/Master-the-Scalp-Course-Details.png"
+    download
     className="btn-ghost"
   >
     Download Brochure
@@ -1091,7 +1244,7 @@ id="course"
       marginTop: "20px",
     }}
   >
-    <li>✓ Scalping Strategies</li>
+    <li>✓ Index Options </li>
     <li>✓ Momentum Trading</li>
     <li>✓ Breakout Trading</li>
     <li>✓ Risk Management</li>
@@ -1119,12 +1272,13 @@ id="course"
       marginTop: "20px",
     }}
   >
-    <li>✓ Index Options</li>
+    <li>✓ <span className="text-shimmer"style={{color: "#F59E0B",fontWeight: 700,}}>
+    Scalping Strategies</span></li>
     <li>✓ Option Greeks</li>
     <li>✓ Option Buying</li>
     <li>✓ Option Selling</li>
-    <li>✓ Trapping Strategies</li>
-    <li>✓ Expiry Trading</li>
+    <li>✓ <span className="text-shimmer"style={{color: "#F59E0B",fontWeight: 700,}}>Trapping Strategies</span></li>
+    <li>✓ <span className="text-shimmer"style={{color: "#F59E0B",fontWeight: 700,}}>Story Base Trading</span></li>
   </ul>
 
  {/*  <div style={{ marginTop: "25px" }}>
@@ -1206,7 +1360,7 @@ id="contact"
         </div>
 
         <div style={{ marginTop: "10px", color: "#D1D5DB" }}>
-          +91 99XXXXXXXX
+          +91 9380891232
         </div>
       </div>
 
@@ -1216,7 +1370,7 @@ id="contact"
         </div>
 
         <div style={{ marginTop: "10px", color: "#D1D5DB" }}>
-          support@tradesimplewithsridhar.com
+          tradesimplewithsridhar@gmail.com
         </div>
       </div>
     </div>
@@ -1242,7 +1396,7 @@ id="contact"
   }}
 >
   <a
-    href="https://youtube.com"
+    href="https://www.youtube.com/@TradeSimpleWithSridhar"
     target="_blank"
     rel="noopener noreferrer"
     style={{

@@ -1018,7 +1018,7 @@ id="course"
 </div>
 </div>
 
-  <div
+{/*   <div
     style={{
       color: "#F59E0B",
       fontSize: "3rem",
@@ -1036,7 +1036,133 @@ id="course"
     }}
   >
     + GST Applicable
-  </p>
+  </p> */}
+
+  <div style={{ marginBottom: "30px" }}>
+  {/* Old Price */}
+  <div
+    style={{
+      color: "#9CA3AF",
+      fontSize: "2rem",
+      textDecoration: "line-through",
+      marginBottom: "6px",
+      fontWeight: 900,
+    }}
+  >
+    ₹24,999 + GST
+  </div>
+
+  {/* Offer Price */}
+  <div
+    style={{
+      color: "#F59E0B",
+      fontSize: "3rem",
+      fontWeight: 900,
+      lineHeight: 1,
+    }}
+  >
+    <span className="text-shimmer">OFFER &nbsp; ₹22,999 </span>
+  </div>
+
+  <div
+    style={{
+      color: "#10B981",
+      fontSize: "1rem",
+      fontWeight: 700,
+      marginTop: "8px",
+    }}
+  >
+    All Inclusive • Best Value
+  </div>
+</div>
+
+<div
+  style={{
+    background: "rgba(245,158,11,0.08)",
+    border: "1px solid rgba(245,158,11,0.25)",
+    borderRadius: "12px",
+    padding: "20px",
+    textAlign: "left",
+    maxWidth: "500px",
+    margin: "0 auto",
+  }}
+>
+  <h3
+    style={{
+      color: "#fff",
+      marginBottom: "15px",
+      fontSize: "1.2rem",
+    }}
+  >
+    Choose Your Payment Plan
+  </h3>
+
+  <div style={{ marginBottom: "16px" }}>
+    <div
+      style={{
+        color: "#10B981",
+        fontWeight: 700,
+        fontSize: "1.1rem",
+      }}
+    >
+      ✓ Pay in Full
+    </div>
+    <div
+      style={{
+        color: "#F59E0B",
+        fontSize: "1.6rem",
+        fontWeight: 800,
+      }}
+    >
+      ₹22,999
+    </div>
+    <div style={{ color: "#9CA3AF" }}>
+      Best Value • All Inclusive
+    </div>
+  </div>
+
+  <div
+    style={{
+      textAlign: "center",
+      color: "#9CA3AF",
+      margin: "12px 0",
+      fontWeight: 600,
+    }}
+  >
+    OR
+  </div>
+
+  <div>
+    <div
+      style={{
+       color: "#10B981",
+        fontWeight: 700,
+        fontSize: "1.1rem",
+      }}
+    >
+     ✓ Pay in 2 Easy Installments
+    </div>
+
+    <div
+      style={{
+        color: "#F59E0B",
+        fontSize: "1.3rem",
+        fontWeight: 700,
+        marginTop: "4px",
+      }}
+    >
+      ₹23,999 Total
+    </div>
+
+    <div style={{ color: "#9CA3AF", marginTop: "8px" }}>
+      ₹12,000 Today
+    </div>
+
+    <div style={{ color: "#9CA3AF" }}>
+      ₹11,999 After 7 Classes
+    </div>
+  </div>
+</div>
 
   <div
   style={{
@@ -1118,7 +1244,7 @@ id="course"
       marginTop: "20px",
     }}
   >
-    <li>✓ Scalping Strategies</li>
+    <li>✓ Index Options </li>
     <li>✓ Momentum Trading</li>
     <li>✓ Breakout Trading</li>
     <li>✓ Risk Management</li>
@@ -1146,12 +1272,13 @@ id="course"
       marginTop: "20px",
     }}
   >
-    <li>✓ Index Options</li>
+    <li>✓ <span className="text-shimmer"style={{color: "#F59E0B",fontWeight: 700,}}>
+    Scalping Strategies</span></li>
     <li>✓ Option Greeks</li>
     <li>✓ Option Buying</li>
     <li>✓ Option Selling</li>
-    <li>✓ Trapping Strategies</li>
-    <li>✓ Expiry Trading</li>
+    <li>✓ <span className="text-shimmer"style={{color: "#F59E0B",fontWeight: 700,}}>Trapping Strategies</span></li>
+    <li>✓ <span className="text-shimmer"style={{color: "#F59E0B",fontWeight: 700,}}>Story Base Trading</span></li>
   </ul>
 
  {/*  <div style={{ marginTop: "25px" }}>
