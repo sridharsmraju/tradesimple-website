@@ -410,4 +410,8 @@ body {
     align-items: center;
     gap: 4px;
   }
+
+   .section-anchor {
+    scroll-margin-top: 170px;
+  }
 }
