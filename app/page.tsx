@@ -1063,7 +1063,7 @@ id="course"
       lineHeight: 1,
     }}
   >
-    <span className="text-shimmer">OFFER &nbsp; ₹22,999 </span>
+    <span className="text-shimmer">OFFER &nbsp; ₹21,999 </span>
   </div>
 
   <div
@@ -1074,7 +1074,7 @@ id="course"
       marginTop: "8px",
     }}
   >
-    All Inclusive • Best Value
+    All Inclusive • Best Value using Gpay
   </div>
 </div>
 
@@ -1089,6 +1089,7 @@ id="course"
     margin: "0 auto",
   }}
 >
+
   <h3
     style={{
       color: "#fff",
@@ -1096,7 +1097,28 @@ id="course"
       fontSize: "1.2rem",
     }}
   >
-    Choose Your Payment Plan
+   <span className="text-shimmer_1"> Pay ₹21,999 using Gpay directly to 9380891232 </span>
+  </h3>
+
+<div
+    style={{
+      textAlign: "center",
+      color: "#9CA3AF",
+      margin: "12px 0",
+      fontWeight: 600,
+    }}
+  >
+    OR
+  </div>
+
+  <h3
+    style={{
+      color: "#fff",
+      marginBottom: "15px",
+      fontSize: "1.2rem",
+    }}
+  >
+    Choose Your Payment Plan using Razorpay
   </h3>
 
   <div style={{ marginBottom: "16px" }}>
@@ -1426,7 +1448,7 @@ id="contact"
 
   <a
   
-    href="https://instagram.com"
+    href="https://www.instagram.com/tradesimplewithsridhar/"
     target="_blank"
     rel="noopener noreferrer"
     style={{

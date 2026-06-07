@@ -348,9 +348,11 @@ export default function Home() {
                 maxWidth: "650px",
               }}
             >
-              Master the stock market with Sridhar. Learn practical trading,
-              risk management, market psychology and real-world strategies that
-              work in live markets.
+            
+
+              Master Index Scalping with Sridhar.<br/>
+              Build confidence in live markets through practical trading, 
+              risk management, market psychology and proven trading strategies.
             </p>
 
             <div
@@ -440,7 +442,7 @@ export default function Home() {
       marginBottom: "10px",
     }}
   >
-    30 Days of Personal Trading Notes <span className="text-shimmer">(COMING SOON) </span>
+    30 Days of Personal Scalping Notes <span className="text-shimmer">(COMING SOON) </span>
   </div>
 
   <p
@@ -653,7 +655,7 @@ export default function Home() {
                 fontStyle: "italic",
               }}
             >
-              Anyone can learn to trade profitably. My goal is to simplify
+              Anyone can learn to scalp profitably. My goal is to simplify
               markets and help traders become consistent.
             </blockquote>
 
@@ -668,7 +670,7 @@ export default function Home() {
               <li>Price Action Trading</li>
               <li>Intraday & Swing Trading</li>
               <li>Risk Management</li>
-              <li>Live Market Sessions</li>
+              <li>Story Based Trading</li>
             </ul>
 
             <a
@@ -863,7 +865,7 @@ export default function Home() {
 </section>
 
 
-<section  className="section-spacing"
+<section  className="section-spacing section-anchor"
 id="course"
   style={{
     background: "#080808",
@@ -1244,7 +1246,7 @@ id="course"
       marginTop: "20px",
     }}
   >
-    <li>✓ Index Options </li>
+    <li>✓ <span className="text-shimmer"style={{color: "#F59E0B",fontWeight: 700,}}>Index Options  </span></li>
     <li>✓ Momentum Trading</li>
     <li>✓ Breakout Trading</li>
     <li>✓ Risk Management</li>
@@ -1293,7 +1295,7 @@ id="course"
 
 {/* GET IN TOUCH */}
 
-<section  className="section-spacing"
+<section  className="section-spacing section-anchor"
 
 id="contact"
   style={{
@@ -1424,7 +1426,7 @@ id="contact"
 
   <a
   
-    href="https://instagram.com"
+    href="https://www.instagram.com/tradesimplewithsridhar/"
     target="_blank"
     rel="noopener noreferrer"
     style={{

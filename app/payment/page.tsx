@@ -396,7 +396,7 @@ margin: "0 auto",
       lineHeight: 1,
     }}
   >
-    <span className="text-shimmer">OFFER &nbsp; ₹22,999 </span>
+    <span className="text-shimmer">OFFER &nbsp; ₹21,999 </span>
   </div>
 
   <div
@@ -407,7 +407,7 @@ margin: "0 auto",
       marginTop: "8px",
     }}
   >
-    All Inclusive • Best Value
+    All Inclusive • Best Value using Gpay
   </div>
 </div>
 
@@ -430,6 +430,36 @@ margin: "0 auto",
     cursor: "pointer",
   }}
 >
+
+   <h3
+    style={{
+      color: "#fff",
+      marginBottom: "15px",
+      fontSize: "1.2rem",
+    }}
+  >
+   <span className="text-shimmer_1"> Pay ₹21,999 using Gpay directly to 9380891232 </span>
+  </h3>
+
+<div
+    style={{
+      textAlign: "center",
+      color: "#9CA3AF",
+      margin: "12px 0",
+      fontWeight: 600,
+    }}
+  >
+    OR
+  </div>
+  <h3
+    style={{
+      color: "#fff",
+      marginBottom: "15px",
+      fontSize: "1.2rem",
+    }}
+  >
+    Choose Your Payment Plan using Razorpay
+  </h3>
   <input
     type="radio"
     name="paymentType"
@@ -438,6 +468,8 @@ margin: "0 auto",
     onChange={(e) => setPaymentType(e.target.value)}
     style={{ marginRight: "10px" }}
   />
+
+  
 
   <span
     style={{
@@ -1144,12 +1176,13 @@ margin: "0 auto",
 </button> */}
 
 <button
+disabled={true}  /* Remove this once in production */
   onClick={handlePayClick}
   className="btn-gold"
->
-  {paymentType === "full"
+>Coming soon
+ {/*  uncommnet this once in production  {paymentType === "full"
     ? "Pay ₹22,999 →"
-    : "Pay ₹12,000 →"}
+    : "Pay ₹12,000 →"} */}
 </button>
     </div>
   </div>

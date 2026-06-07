@@ -5,6 +5,7 @@ import { useState } from "react";
 export default function PaymentPage() {
 const [accepted, setAccepted] = useState(false);
 const [paymentType, setPaymentType] = useState("full");
+const [showDisclaimerWarning, setShowDisclaimerWarning] = useState(false);
   
 
 /* const startPayment = async () => {
@@ -165,6 +166,20 @@ const [paymentType, setPaymentType] = useState("full");
       "Unable to initiate payment"
     );
   }
+};
+
+const handlePayClick = () => {
+  if (!accepted) {
+    setShowDisclaimerWarning(true);
+
+    setTimeout(() => {
+      setShowDisclaimerWarning(false);
+    }, 2000);
+
+    return;
+  }
+
+  startPayment(paymentType);
 };
 
   return (
@@ -396,7 +411,7 @@ margin: "0 auto",
   </div>
 </div>
 
-<div
+<div className="payment-plan-mobile"
   style={{
     textAlign: "left",
     maxWidth: "500px",
@@ -434,7 +449,7 @@ margin: "0 auto",
     Pay in Full
   </span>
 
-  <div
+  {/* <div
     style={{
       color: "#F59E0B",
       fontSize: "1.6rem",
@@ -444,8 +459,40 @@ margin: "0 auto",
     }}
   >
     ₹22,999 <span className="text-shimmer"style={{fontSize: "1rem",color: "#F59E0B",fontWeight: 100,}}> Save ₹2,000 </span>
-  </div>
+  </div> */}
+<div className="price-row"
+  style={{
+    fontSize: "1.6rem",
+    fontWeight: 800,
+  }}
+>
+  <span
+    style={{
+      color: "#9CA3AF",
+      textDecoration: "line-through",
+      marginRight: "10px",
+      fontSize: "1rem",
+      fontWeight: 500,
+    }}
+  >
+    ₹24,999
+  </span>
 
+  <span style={{ color: "#F59E0B" }}>
+    ₹22,999
+  </span>
+
+  <span className="text-shimmer"
+    style={{
+      color: "#10B981",
+      fontSize: "0.95rem",
+      fontWeight: 600,
+      marginLeft: "8px",
+    }}
+  >
+    (Save ₹2,000 • Best Value)
+  </span>
+</div>
   <div
     style={{
       color: "#9CA3AF",
@@ -481,7 +528,7 @@ margin: "0 auto",
     Pay in 2 Easy Installments
   </span>
 
-  <div
+{/*   <div
     style={{
       color: "#F59E0B",
       fontSize: "1.3rem",
@@ -491,9 +538,43 @@ margin: "0 auto",
     }}
   >
     ₹23,999 Total
-  </div>
+  </div> */}
+ 
+  <div className="price-row"
+  style={{
+    fontSize: "1.6rem",
+    fontWeight: 800,
+  }}
+>
+  <span
+    style={{
+      color: "#9CA3AF",
+      textDecoration: "line-through",
+      marginRight: "10px",
+      fontSize: "1rem",
+      fontWeight: 500,
+    }}
+  >
+    ₹24,999
+  </span>
 
-  <div
+  <span style={{ color: "#F59E0B" }}>
+    ₹23,999
+  </span>
+
+  <span
+    style={{
+      color: "#10B981",
+      fontSize: "0.95rem",
+      fontWeight: 600,
+      marginLeft: "8px",
+    }}
+  >
+    (Save ₹1,000)
+  </span>
+</div>
+
+  <div className="price-detail"
     style={{
       color: "#9CA3AF",
       marginTop: "8px",
@@ -503,7 +584,7 @@ margin: "0 auto",
     ₹12,000 Today
   </div>
 
-  <div
+  <div className="price-detail"
     style={{
       color: "#9CA3AF",
       marginLeft: "25px",
@@ -993,7 +1074,7 @@ margin: "0 auto",
         </p>
       )} */}
 
-      {!accepted && (
+   {/*    {!accepted && (
   <div
     style={{
       background: "rgba(245,158,11,0.12)",
@@ -1007,7 +1088,7 @@ margin: "0 auto",
   >
     ⚠️ Please read and accept the disclaimer before proceeding with payment.
   </div>
-)}
+)} */}
 
       {/* <button 
         onClick={startPayment}
@@ -1021,7 +1102,38 @@ margin: "0 auto",
         Pay Now →
       </button> */}
 
-      <button
+      {!accepted && (
+  <div
+    style={{
+      background: showDisclaimerWarning
+        ? "rgba(239,68,68,0.15)"
+        : "rgba(245,158,11,0.12)",
+
+      border: showDisclaimerWarning
+        ? "2px solid #EF4444"
+        : "1px solid rgba(245,158,11,0.35)",
+
+      color: showDisclaimerWarning
+        ? "#EF4444"
+        : "#F59E0B",
+
+      padding: "14px 18px",
+      borderRadius: "10px",
+      marginBottom: "20px",
+      fontWeight: 600,
+
+      transition: "all 0.3s ease",
+
+      transform: showDisclaimerWarning
+        ? "scale(1.02)"
+        : "scale(1)",
+    }}
+  >
+    ⚠️ Please read and accept the disclaimer before proceeding with payment.
+  </div>
+)}
+
+     {/*  <button
   onClick={() => startPayment(paymentType)}
   className="btn-gold"
   disabled={!accepted}
@@ -1029,6 +1141,16 @@ margin: "0 auto",
   {paymentType === "full"
     ? "Pay ₹22,999 →"
     : "Pay ₹12,000 →"}
+</button> */}
+
+<button
+disabled={true}  /* Remove this once in production */
+  onClick={handlePayClick}
+  className="btn-gold"
+>Coming soon
+ {/*  uncommnet this once in production  {paymentType === "full"
+    ? "Pay ₹22,999 →"
+    : "Pay ₹12,000 →"} */}
 </button>
     </div>
   </div>
